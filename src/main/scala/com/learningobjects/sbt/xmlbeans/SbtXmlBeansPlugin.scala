@@ -49,7 +49,7 @@ object SbtXmlBeansPlugin extends AutoPlugin {
 
   def cachedGenerateSources(sourceDir: File, srcOut: File, classOut: File, classpath: Classpath, xmlbeansParams: XmlbeansParams, streams: TaskStreams): Seq[File] = {
     FileFunction.cached(streams.cacheDirectory)(FilesInfo.lastModified, FilesInfo.exists) {
-      (inputFiles, modifiedOutputFile) => generateSources(inputFiles, sourceDir, srcOut, classOut, classpath, xmlbeansParams).toSet
+      (inputFiles, modifiedOutputFile) => generateSources(inputFiles, sourceDir, srcOut / "xmlbeans", classOut, classpath, xmlbeansParams).toSet
     } {
       ((sourceDir ** "*.xsd") +++ (sourceDir ** "*.xsdconfig") +++ (sourceDir ** "*.java")).get.toSet
     }.toSeq //TODO: toSet/toSeq conversions are awkward.
