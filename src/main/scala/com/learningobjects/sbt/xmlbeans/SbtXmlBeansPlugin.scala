@@ -35,7 +35,7 @@ object SbtXmlBeansPlugin extends AutoPlugin {
 //    xmlbeansLibs := Seq(
 //      "org.apache.xmlbeans" % "xmlbeans" % "2.4.0"
 //    ),
-    xmlbeansParams := XmlbeansParams(debug = true, verbose = false, quiet = true, download = false, javaSource = "1.5")
+    xmlbeansParams := XmlbeansParams(debug = false, verbose = false, quiet = true, download = false, javaSource = "1.5")
     //libraryDependencies <++= (xmlbeansLibs)(_.map(_ % XmlBeans.name))
   ) ++ inConfig(Compile)(unscopedSettings)
 
