@@ -64,8 +64,6 @@ object SbtXmlBeansPlugin extends AutoPlugin {
     val xsds = (sourceDir / "xsd") ** "*.xsd"
     val xsdconfigs = (sourceDir / "xsdconfig") ** "*.xsdconfig"
 
-    println(xsdconfigs.getPaths)
-
     val javaInput = (sourceDir / "java") ** "*.java"
 
     val cp = classpath.files.toArray
