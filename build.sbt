@@ -1,5 +1,3 @@
-enablePlugins(GitVersioning)
-
 name := "sbt-xmlbeans"
 
 organization := "com.learningobjects"
